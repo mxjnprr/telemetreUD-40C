@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "telemetre"
+version = "1.0.0"
+description = "Telemetre Bosch UD 40C -> LibreOffice Calc"
+requires-python = ">=3.9"
+dependencies = ["bleak>=0.21"]
+
+[project.scripts]
+telemetre = "telemetre_app:main"
+
+[tool.hatch.build.targets.wheel]
+include = ["telemetre_app.py"]
